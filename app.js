@@ -8,8 +8,19 @@ app.disable('x-powered-by')
 app.use(bodyParser.json())
 if (process.env.NODE_ENV === 'development') app.use(morgan('dev'))
 
-// const catsRoutes = require('./src/routes/cats')
-// app.use('/cats', catsRoutes)
+//routes
+
+const bookRoutes = require('./routes/books.routes.js')
+app.use('/books', bookRoutes)
+
+const authorRoutes = require('./routes/authors.routes.js')
+app.use('/authors', authorRoutes)
+
+
+
+
+
+// error handling
 
 app.use((err, req, res, next) => {
   console.error(err)
@@ -18,10 +29,12 @@ app.use((err, req, res, next) => {
 })
 
 app.use((req, res, next) => {
-  res.status(404).json({ error: { message: 'Not found' }})
+  res.status(404).json({ error: { message: 'Not found' } })
 })
 
-const listener = () => console.log(`Listening on port ${port}!`)
+// server
+
+const listener = () => console.log(`library listening on port ${port}!`)
 app.listen(port, listener)
 
 module.exports = app

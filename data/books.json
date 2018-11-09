@@ -1,9 +1,1 @@
-[
-    {
-        "id": "1",
-        "title": "Alias Grace",
-        "borrowed": false,
-        "authors": ["3"]
-
-    }
-]
+[{"id":"18ba00","title":"Alias Grace","borrowed":false,"authors":["3"]},{"id":"f13b79","title":"Robber Bride","borrowed":false,"authors":["3"]},{"id":"39a980","title":"Post-Birthday World","borrowed":false,"authors":["1e1f6a"]},{"id":"404eba","title":"Brother's Keeper","borrowed":false,"authors":["1e1f6a"]},{"id":"91e802","title":"Brother's Keeper","borrowed":false,"authors":["1e1f6a"]}]
