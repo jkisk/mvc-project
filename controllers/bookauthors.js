@@ -1,29 +1,32 @@
 const model = require('../models/bookauthors.js')
 
-// get authors through books
+// get author through books
 
-function getAll(req, res, next) {
+function getAuthor(req, res, next) {
  
-  const result = model.getAll(req.params.id)
-
+  const result = model.getAuthor(req.params.id, req.params.authorId)
   res.status(200).send(result)
+  
 }
 
 
 // update author through books
 
 function update(req, res, next) {
-  const result = model.update(req.params.id,req.body)
+
+  const result = model.update(req.params.id,req.params.authorId)
   return res.status(201).send(result)
+
 }
 
 // delete author through books
 
 function remove(req, res, next) {
-  const result = model.remove(req.params.id, req.body)
+
+  const result = model.remove(req.params.id, req.params.authorId)
   return res.status(201).send(result)
 
 }
 
 
-module.exports = { getAll, update, remove }
+module.exports = { getAuthor, update, remove }

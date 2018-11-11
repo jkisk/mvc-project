@@ -72,6 +72,7 @@ const update = (id, body) => {
   }
   return response
 }
+
 // delete
 
 const remove = (id) => {

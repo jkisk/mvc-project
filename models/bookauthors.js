@@ -9,25 +9,20 @@ const booksJSON = fs.readFileSync(bookPath)
 const books = JSON.parse(booksJSON)
 
 
-// get all authors of book through books
+// get author of book through books
 
-const getAll = (id) => {
+const getAuthor = (id, authorId) => {
   let book = books.find(b => b.id === id)
-
+  let author = authorsData.find(a => a.id === authorId)
   const errors = []
   let response = []
+
   if (!book) {
     errors.push = { errors }
     response = errors
   }
-
   else {
-    let authorArray = book.authors
-    for (ele of authorArray) {
-      console.log(ele)
-      response.push(authorsData.find(a => a.id === ele))
-
-    }
+    response = author
   }
   return response
 }
@@ -70,4 +65,4 @@ const remove = (id, authorId) => {
 }
 
 
-module.exports = { getAll, update, remove }
+module.exports = { getAuthor, update, remove }

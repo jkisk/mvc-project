@@ -16,10 +16,6 @@ app.use('/books', bookRoutes)
 const authorRoutes = require('./routes/authors.routes.js')
 app.use('/authors', authorRoutes)
 
-
-
-
-
 // error handling
 
 app.use((err, req, res, next) => {

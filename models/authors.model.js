@@ -12,13 +12,6 @@ const create = (body) => {
   const errors = []
   const first = body.first
   const last = body.last
-
-  // let response
-  // if (!first) {
-  //   errors.push('please provide first')
-  //   response = { errors }
-  // }
-  // else {
   const author = {
     id: shortid.generate(),
     first,
@@ -30,8 +23,8 @@ const create = (body) => {
 
   let authorData = JSON.stringify(authors)
   fs.writeFileSync(authorPath, authorData)
-// }
-return response
+
+  return response
 }
 
 // get all
@@ -54,9 +47,8 @@ const update = (id, body) => {
   const errors = []
   const first = body.first
   const last = body.last
-
-
   let response
+
   if (!first) {
     errors.push('please provide first')
     response = { errors }
