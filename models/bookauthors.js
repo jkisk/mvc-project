@@ -9,22 +9,30 @@ const booksJSON = fs.readFileSync(bookPath)
 const books = JSON.parse(booksJSON)
 
 
+const getAll = (id) => {
+  let book = books.find(b => b.id === id)
+  if(!book) return  { error: ['book not found'] }
+
+  const authors = book.authors.map(author => authorsData.find(a => a.id === author))
+
+  return authors
+}
+
 // get author of book through books
 
 const getAuthor = (id, authorId) => {
   let book = books.find(b => b.id === id)
-  let author = authorsData.find(a => a.id === authorId)
-  const errors = []
-  let response = []
-
   if (!book) {
-    errors.push = { errors }
-    response = errors
+    return  { error: ['book not found'] }
+    
   }
-  else {
-    response = author
+  
+  let author = authorsData.find(a => a.id === authorId)
+  if(!author){
+    return  { error: ['author not found'] }
   }
-  return response
+
+  return author
 }
 
 
@@ -36,6 +44,7 @@ const update = (id, newAuthorid) => {
 
   let response
 
+  // TODO: Add error handling
   if (!id) {
     response = errors
   }
@@ -53,6 +62,7 @@ const remove = (id, authorId) => {
 
   let response
 
+  // TODO: Add error handling
   if (!id) {
     response = errors
   }
@@ -65,4 +75,4 @@ const remove = (id, authorId) => {
 }
 
 
-module.exports = { getAuthor, update, remove }
+module.exports = { getAll, getAuthor, update, remove }

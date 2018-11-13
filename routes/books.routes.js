@@ -12,7 +12,7 @@ router.post('/:id', ctrl.update)
 router.delete('/:id', ctrl.remove)
 
 // authors through books routes
-
+router.get('/:id/authors', control.getAll)
 router.get('/:id/authors/:authorId', control.getAuthor)
 router.put('/:id/authors/:authorId', control.update)
 router.delete('/:id/authors/:authorId', control.remove)

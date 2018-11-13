@@ -43,6 +43,7 @@ const getAll = (limit) => {
 // get one
 
 const getOne = (id) => {
+  // TODO: Add error handling
   return result = books.find(b => b.id === id)
 }
 
@@ -77,6 +78,7 @@ const update = (id, body) => {
 
 const remove = (id) => {
   const removeIndex = books.findIndex(b => b.id === id)
+  // TODO: Add error handling
   return books.splice(removeIndex, 1)
 }
 

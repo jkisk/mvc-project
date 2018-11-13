@@ -15,6 +15,8 @@ function getAll(req, res, next) {
 function getOne(req, res, next) {
 
   const result = model.getOne(req.params.id)
+
+  // TODO: ADD error handling. author does not exists
   return res.status(200).send(result)
 
 }
@@ -39,6 +41,8 @@ function create(req, res, next) {
 function update(req, res, next) {
 
   const result = model.update(req.params.id, req.body)
+
+  // TODO: Add error handling
   return res.status(201).send(result)
 
 }
@@ -48,6 +52,7 @@ function update(req, res, next) {
 function remove(req, res, next) {
 
   const result = model.remove(req.params.id)
+  // TODO: Add error handling
   return res.status(201).send(result)
 
 }
