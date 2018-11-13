@@ -8,7 +8,7 @@ const authors = JSON.parse(authorsJSON)
 // create
 
 const create = (body) => {
-
+  // TODO: add error handling
   const errors = []
   const first = body.first
   const last = body.last
@@ -36,6 +36,7 @@ const getAll = (limit) => {
 // get one
 
 const getOne = (id) => {
+  // TODO: Add error handling
   return result = authors.find(b => b.id === id)
 }
 
@@ -68,6 +69,7 @@ const update = (id, body) => {
 
 const remove = (id) => {
   const removeIndex = authors.findIndex(b => b.id === id)
+  // TODO: Add error handling
   return authors.splice(removeIndex, 1)
 }
 
